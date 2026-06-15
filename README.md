@@ -1,7 +1,6 @@
 # Portfolio
 
 Personal portfolio website built with **Next.js 14**, **TypeScript**, and **Tailwind CSS**.  
-Features a clean, aesthetic design with **orange / black / white** color scheme and **dark/light theme toggle**.
 
 ---
 
