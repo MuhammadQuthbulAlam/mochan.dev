@@ -76,42 +76,56 @@ export const projects = [
     title: "Mochan Coffee",
     slug: "mochan-coffee",
     description:
-      "Micro SaaS platform for coffee shop management. Built with Flutter for cross-platform mobile experience with real-time order tracking.",
+      "Platform Micro SaaS untuk manajemen kedai kopi. Dibangun dengan Flutter untuk pengalaman mobile lintas platform dengan pelacakan pesanan secara real-time.",
     longDescription:
       "A comprehensive Micro SaaS solution designed for coffee shop businesses. Features include order management, inventory tracking, sales analytics, and customer loyalty programs.",
     tech: ["Dart", "Flutter", "Firebase", "Node.js"],
     github: "https://github.com/MuhammadQuthbulAlam/Mochan-Coffee",
     live: null,
     featured: true,
-    image: null,
+    image: "/mochan.png",
     category: "Mobile App",
   },
   {
-    title: "MCC Store",
-    slug: "mcc-store",
+    title: "Company Profile Majalengka Creative Center",
+    slug: "mcc",
     description:
-      "E-commerce store platform built with PHP. Full-featured online store with product management, cart, and checkout.",
+      "Website company profile majalengka creative center",
     longDescription:
       "A PHP-based e-commerce platform with product catalog, shopping cart, user authentication, order management, and admin dashboard.",
-    tech: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
-    github: "https://github.com/MuhammadQuthbulAlam/mcc.store",
+    tech: ["Next.js", "React", "HTML", "CSS", "JavaScript"],
+    github: "",
     live: null,
     featured: true,
-    image: null,
+    image: "/mcc.png",
+    category: "Web App",
+  },
+  {
+    title: "SIMAK UPZISNU",
+    slug: "simak-upzisnu",
+    description:
+      "SIMAK UPZISNU adalah Sistem Manajemen Keuangan Berbasis QR Code yang dirancang untuk membantu pengelolaan, pencatatan, monitoring, dan pelaporan penghimpunan dana kencleng (infaq, sedekah, dan dana sosial keagamaan) yang dikelola oleh UPZISNU secara lebih efektif, transparan, dan terintegrasi.",
+    longDescription:
+      "A comprehensive healthcare management solution designed to streamline patient care and administrative tasks. Includes features for managing patient information, scheduling appointments, and facilitating virtual consultations.",
+    tech: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
+    github: "",
+    live: null,
+    featured: true,
+    image: "/upzisnu-care.png",
     category: "Web App",
   },
   {
     title: "ChatBot",
     slug: "chatbot",
     description:
-      "AI-powered ChatBot application built with JavaScript. Provides conversational interface with natural language processing.",
+      "Aplikasi ChatBot berbasis AI yang dibangun dengan JavaScript. Menyediakan antarmuka percakapan dengan pemrosesan bahasa alami.",
     longDescription:
       "An intelligent chatbot application leveraging AI APIs to provide natural, context-aware conversations. Built with modern JavaScript architecture.",
     tech: ["JavaScript", "Node.js", "AI API"],
     github: "https://github.com/MuhammadQuthbulAlam/ChatBot",
     live: null,
     featured: true,
-    image: null,
+    image: "/mochan3.png",
     category: "Web App",
   },
   // ← Tambahkan project lainnya di sini
@@ -122,7 +136,7 @@ export const education = [
     degree: "Sarjana Komputer", // ← ganti
     school: "Universitas Majalengka", // ← ganti
     period: "2021 – 2025", // ← ganti
-    description: "Your description here.", // ← ganti
+    description: "Seorang Fullstack Software Engineering dengan minat yang kuat pada frontend, sistem backend, dan AI terapan. Saya senang membangun aplikasi yang bersih, terukur, dan mudah dipelihara yang terinspirasi oleh workflow open-source.", // ← ganti
   },
 ];
 
