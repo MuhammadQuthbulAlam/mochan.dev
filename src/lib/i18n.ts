@@ -15,7 +15,7 @@ export const translations = {
     },
     hero: {
       available: "Tersedia untuk kerja freelance",
-      bio: `Saya adalah ${profile.name}, pengembang yang berbasis di ${profile.location}. Saya membangun aplikasi web dan mobile yang cepat, skalabel, dan menarik.`,
+      bio: `Saya ${profile.name}, Software Developer yang berbasis di ${profile.location}. Saya mengembangkan aplikasi web dan mobile yang modern, berkinerja tinggi, skalabel, serta berorientasi pada kebutuhan pengguna dan tujuan bisnis.`,
       seeMyWork: "Lihat Karyaku",
       getInTouch: "Hubungi Saya",
       findMe: "temukan saya di",
@@ -23,9 +23,9 @@ export const translations = {
     about: {
       sectionLabel: "Tentang Saya",
       title: "Siapa Saya",
-      paragraph1: `Saya adalah ${profile.name}, seorang developer yang berbasis di ${profile.location}. Saya mengkhususkan diri dalam membangun aplikasi web dan mobile modern yang cepat, skalabel, dan indah.`,
+      paragraph1: `Saya adalah ${profile.name}, Saya Muhammad Quthbul Alam, Software Developer yang berbasis di ${profile.location}, Jawa Barat, Indonesia 🇮🇩. Saya mengembangkan aplikasi web dan mobile yang modern, berkinerja tinggi, skalabel, serta berorientasi pada kebutuhan pengguna dan tujuan bisnis. Saya mengkhususkan diri dalam membangun aplikasi web dan mobile modern yang cepat, skalabel, dan indah.`,
       paragraph2:
-        "Ketika tidak sedang coding, saya menjelajahi teknologi baru, berkontribusi pada open source, atau membantu klien mewujudkan ide menjadi produk nyata sebagai freelancer.",
+        "Saya berpengalaman dalam mengembangkan aplikasi menggunakan teknologi modern seperti React, Next.js, TypeScript, Node.js, dan PostgreSQL. Saya menikmati proses menerjemahkan kebutuhan pengguna menjadi produk digital yang fungsional, efisien, dan mudah dipelihara dalam jangka panjang, berkontribusi pada open source, atau membantu klien mewujudkan ide menjadi produk nyata sebagai freelancer.",
       stats: {
         repos: "Repos GitHub",
         years: "Tahun Coding",
