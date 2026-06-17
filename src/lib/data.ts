@@ -58,7 +58,7 @@ export const experiences = [
     period: "2022 – Sekarang",
     description:
       "Developing custom web applications and mobile apps for clients. Specializing in React, Node.js, and Flutter solutions.",
-    tags: ["React", "Node.js", "Flutter", "PostgreSQL"],
+    tags: ["React", "TypeScript", "Next.js", "Node.js", "Flutter", "PostgreSQL"],
   },
   {
     role: "IT Support & Inventory",
@@ -68,7 +68,14 @@ export const experiences = [
       "Providing IT support, maintaining hardware and software infrastructure, managing IT asset inventory.",
     tags: ["IT Support", "Networking", "Hardware", "Inventory"],
   },
-  // ← Tambahkan pengalaman kerja lainnya di sini
+  {
+    role: "Freelance Photographer & Videographer",
+    company: "wiraswasta",
+    period: "2020 – Januari 2026",
+    description:
+      "Providing photography and videography services for events, portraits, and commercial projects.",
+    tags: ["Photography", "Videography", "Editing"],
+  },// ← Tambahkan pengalaman kerja lainnya di sini
 ];
 
 export const projects = [
@@ -83,7 +90,7 @@ export const projects = [
     github: "https://github.com/MuhammadQuthbulAlam/Mochan-Coffee",
     live: null,
     featured: true,
-    image: "/mochan.png",
+    image: "/mc.jpeg",
     category: "Mobile App",
   },
   {
@@ -107,7 +114,7 @@ export const projects = [
       "SIMAK UPZISNU adalah Sistem Manajemen Keuangan Berbasis QR Code yang dirancang untuk membantu pengelolaan, pencatatan, monitoring, dan pelaporan penghimpunan dana kencleng (infaq, sedekah, dan dana sosial keagamaan) yang dikelola oleh UPZISNU secara lebih efektif, transparan, dan terintegrasi.",
     longDescription:
       "A comprehensive healthcare management solution designed to streamline patient care and administrative tasks. Includes features for managing patient information, scheduling appointments, and facilitating virtual consultations.",
-    tech: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
+    tech: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS", "NeonDB", "Vercel"],
     github: "",
     live: null,
     featured: true,
@@ -125,7 +132,7 @@ export const projects = [
     github: "https://github.com/MuhammadQuthbulAlam/ChatBot",
     live: null,
     featured: true,
-    image: "/mochan3.png",
+    image: "/mochan.png",
     category: "Web App",
   },
   // ← Tambahkan project lainnya di sini
