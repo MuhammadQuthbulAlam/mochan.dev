@@ -15,7 +15,7 @@ export const translations = {
     },
     hero: {
       available: "Tersedia untuk kerja freelance",
-      bio: `Saya ${profile.name}, Software Developer yang berbasis di ${profile.location}. Saya mengembangkan aplikasi web dan mobile yang modern, berkinerja tinggi, skalabel, serta berorientasi pada kebutuhan pengguna dan tujuan bisnis.`,
+      bio: `Saya ${profile.name}, Software Developer yang berbasis di. Saya mengembangkan aplikasi web dan mobile yang modern, berkinerja tinggi, skalabel, serta berorientasi pada kebutuhan pengguna dan tujuan bisnis.`,
       seeMyWork: "Lihat Karyaku",
       getInTouch: "Hubungi Saya",
       findMe: "temukan saya di",
@@ -23,7 +23,7 @@ export const translations = {
     about: {
       sectionLabel: "Tentang Saya",
       title: "Siapa Saya",
-      paragraph1: `Saya adalah ${profile.name}, Saya Muhammad Quthbul Alam, Software Developer yang berbasis di ${profile.location}, Jawa Barat, Indonesia 🇮🇩. Saya mengembangkan aplikasi web dan mobile yang modern, berkinerja tinggi, skalabel, serta berorientasi pada kebutuhan pengguna dan tujuan bisnis. Saya mengkhususkan diri dalam membangun aplikasi web dan mobile modern yang cepat, skalabel, dan indah.`,
+      paragraph1: `Saya adalah ${profile.name}, Saya Muhammad Quthbul Alam, Software Developer yang berbasis di, Jawa Barat, Indonesia 🇮🇩. Saya mengembangkan aplikasi web dan mobile yang modern, berkinerja tinggi, skalabel, serta berorientasi pada kebutuhan pengguna dan tujuan bisnis. Saya mengkhususkan diri dalam membangun aplikasi web dan mobile modern yang cepat, skalabel, dan indah.`,
       paragraph2:
         "Saya berpengalaman dalam mengembangkan aplikasi menggunakan teknologi modern seperti React, Next.js, TypeScript, Node.js, dan PostgreSQL. Saya menikmati proses menerjemahkan kebutuhan pengguna menjadi produk digital yang fungsional, efisien, dan mudah dipelihara dalam jangka panjang, berkontribusi pada open source, atau membantu klien mewujudkan ide menjadi produk nyata sebagai freelancer.",
       stats: {
@@ -100,7 +100,7 @@ export const translations = {
       title: "Who I Am",
       paragraph1: `I'm ${profile.name}, a developer based in ${profile.location}. I specialize in building modern web and mobile applications that are fast, scalable, and beautiful.`,
       paragraph2:
-        "When I’m not coding, I explore new tech, contribute to open source, or help clients turn ideas into real products as a freelancer.",
+        "I have experience developing applications using modern technologies such as React, Next.js, TypeScript, Node.js, and PostgreSQL. I enjoy translating user needs into functional, efficient, and long-term maintainable digital products, contributing to open source, or helping clients turn ideas into tangible products as a freelancer.",
       stats: {
         repos: "GitHub Repos",
         years: "Years Coding",
