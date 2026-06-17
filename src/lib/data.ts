@@ -8,7 +8,7 @@ export const profile = {
   nickname: "Mochan",
   tagline: "Full Stack Web Developer & Android Developer",
   bio: "Passionate developer from Majalengka, West Java. I craft scalable web apps and elegant mobile experiences. Vibe Coder. Freelancer. Always learning, always shipping.",
-  location: "Majalengka, West Java 🇮🇩",
+  location: "Majalengka, Jawa Barat 🇮🇩",
   email: "mochanendeavour@gmail.com",
 
   social: {
@@ -16,7 +16,7 @@ export const profile = {
     linkedin: "https://www.linkedin.com/in/muhammad-quthbul-alam-a46933283/",
     instagram: "https://www.instagram.com/kzr.mchn19/",
     facebook: "https://web.facebook.com/kyu.pe.16",
-    website: "https://mochandev.vercel.app",
+    website: "https://mochan-dev.vercel.app",
   },
 
   availableForWork: true,

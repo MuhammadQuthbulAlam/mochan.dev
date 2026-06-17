@@ -165,7 +165,7 @@ export default function HeroSection() {
                   fontFamily: "var(--font-display)",
                 }}
               >
-                37+ Repos 🚀
+                37+ Repos 
               </div>
               <div
                 className="absolute -top-2 -right-6 px-4 py-2 rounded-xl text-sm font-semibold shadow-lg"
@@ -176,7 +176,7 @@ export default function HeroSection() {
                   fontFamily: "var(--font-display)",
                 }}
               >
-                Full Stack 💻
+                Full Stack
               </div>
             </div>
           </div>
