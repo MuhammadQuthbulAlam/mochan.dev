@@ -18,106 +18,165 @@ export interface KnowledgeEntry {
 export const knowledgeBase: KnowledgeEntry[] = [
   {
     id: "greeting",
-    keywords: ["halo", "hai", "hi", "hello", "hey", "pagi", "siang", "malam", "sore"],
-    answer: `Halo! 👋 Saya asisten virtual ${profile.nickname}. Saya bisa cerita tentang skill, project, pengalaman kerja, atau cara menghubunginya. Mau tanya apa?`,
-    followUp: ["Siapa kamu?", "Apa skill-nya?", "Lihat project"],
+    keywords: ["halo", "hai", "hi", "hello", "hey", "pagi", "siang", "malam", "sore", "apa kabar"],
+    answer: `Halo! 👋 Saya asisten virtual ${profile.nickname}. Saya siap bantu kamu tahu lebih banyak tentang skill, project, pengalaman, atau cara menghubungi ${profile.nickname}. Yuk mulai!`,
+    followUp: ["Siapa kamu?", "Apa skill-nya?", "Lihat project", "Bisa hubungi dimana?"],
   },
   {
     id: "who",
-    keywords: ["siapa", "kenalan", "perkenalan", "tentang kamu", "tentang dia", "profil", "identitas", "who are you", "who is"],
-    answer: `${profile.name}, biasa dipanggil ${profile.nickname}. ${profile.bio} Berbasis di ${profile.location}.`,
-    followUp: ["Apa skill-nya?", "Bisa hubungi dimana?"],
+    keywords: ["siapa", "kenalan", "perkenalan", "tentang kamu", "profil", "identitas", "who are you", "who is", "kamu siapa"],
+    answer: `${profile.name}, biasa dipanggil ${profile.nickname}. ${profile.bio} Berbasis di ${profile.location}, saya suka membuat aplikasi web dan mobile yang bersih serta mudah dipakai.`,
+    followUp: ["Apa skill-nya?", "Project terbaru?", "Bisa remote?"],
+  },
+  {
+    id: "about",
+    keywords: ["tentang", "about", "ceritakan tentang", "apa itu", "profil"],
+    answer: `${profile.nickname} adalah Full Stack Web Developer & Android Developer yang dapat membangun aplikasi modern, rapi, dan scalable. Jika kamu butuh website, mobile app, atau sistem internal, saya siap bantu.`,
+    followUp: ["Apa skill-nya?", "Lihat project", "Bagaimana cara kerja?"],
   },
   {
     id: "skills",
-    keywords: ["skill", "kemampuan", "bisa apa", "keahlian", "menguasai", "tech stack", "teknologi", "bahasa programming", "stack"],
-    answer: `${profile.nickname} menguasai: ${[...skills.languages, ...skills.frameworks].slice(0, 8).map((s) => s.name).join(", ")}. Database: ${skills.databases.map((d) => d.name).join(" & ")}. Tools: ${skills.tools.map((t) => t.name).join(", ")}.`,
-    followUp: ["Apa project terbarunya?", "Berapa lama belajar coding?"],
+    keywords: ["skill", "kemampuan", "bisa apa", "keahlian", "menguasai", "tech stack", "teknologi", "bahasa programming", "stack", "skills"],
+    answer: `${profile.nickname} menguasai: ${[...skills.languages, ...skills.frameworks].map((s) => s.name).join(", ")}. Untuk database ada ${skills.databases.map((d) => d.name).join(" & ")} dan tools seperti ${skills.tools.map((t) => t.name).join(", ")}.`,
+    followUp: ["Project apa yang cocok?", "Apa skill favorit?"],
+  },
+  {
+    id: "stack",
+    keywords: ["stack", "tech stack", "technology stack", "framework", "library", "tools", "react", "next.js", "node.js", "flutter"],
+    answer: `Tech stack utama ${profile.nickname} meliputi React, Next.js, Node.js, dan Flutter. Untuk data menggunakan PostgreSQL/MySQL, dan deployment sering lewat Vercel.`,
+    followUp: ["Skill apa lagi?", "Bisa remote?"],
   },
   {
     id: "projects",
-    keywords: ["project", "proyek", "karya", "portofolio", "portfolio", "produk", "aplikasi", "app yang dibuat", "github"],
-    answer: `Beberapa project unggulan: ${projects.map((p) => `${p.title} (${p.category})`).join(", ")}. Semua ada di GitHub: ${profile.social.github}`,
-    followUp: ["Ceritakan Mochan Coffee", "Bisa hubungi dimana?"],
+    keywords: ["project", "proyek", "karya", "portofolio", "portfolio", "produk", "aplikasi", "app", "github", "works"],
+    answer: `Beberapa project unggulan: ${projects.map((p) => `${p.title} (${p.category})`).join(", ")}. Semua project bisa dilihat di GitHub: ${profile.social.github}.`,
+    followUp: ["Ceritakan Mochan Coffee", "Ceritakan SIMAK UPZISNU", "Ceritakan ChatBot"],
   },
   {
     id: "project-mochan",
-    keywords: ["mochan", "coffee", "kopi"],
-    answer: `Mochan Coffee adalah Micro SaaS untuk manajemen coffee shop, dibangun dengan Flutter & Firebase. Fitur: order management, inventory tracking, sales analytics, dan loyalty program. Cek di GitHub: ${profile.social.github}/Mochan-Coffee`,
+    keywords: ["mochan", "coffee", "kopi", "mochan coffee", "kedai kopi"],
+    answer: `Mochan Coffee adalah Micro SaaS untuk manajemen kedai kopi. Dibangun dengan Flutter & Firebase, fitur utamanya meliputi order management, inventory tracking, sales analytics, dan loyalty program.`,
   },
   {
-    id: "project-store",
-    keywords: ["mcc", "store", "toko", "ecommerce", "e-commerce"],
-    answer: `MCC Store adalah platform e-commerce berbasis PHP & MySQL, lengkap dengan katalog produk, cart, checkout, dan admin dashboard.`,
+    id: "project-mcc",
+    keywords: ["mcc", "store", "toko", "ecommerce", "e-commerce", "company profile"],
+    answer: `MCC Store adalah website company profile dengan fitur e-commerce sederhana. Dikembangkan dengan PHP & MySQL, mencakup katalog produk, cart, checkout, dan dashboard admin.`,
+  },
+  {
+    id: "project-simak",
+    keywords: ["simak", "upzisnu", "keuangan", "qr code", "donasi", "manajemen keuangan"],
+    answer: `SIMAK UPZISNU adalah sistem pengelolaan keuangan berbasis QR Code untuk infaq, sedekah, dan dana sosial. Fokusnya pada transparansi, kemudahan pencatatan, dan laporan otomatis.`,
   },
   {
     id: "project-chatbot",
-    keywords: ["chatbot project", "bot project"],
-    answer: `Ada project ChatBot berbasis JavaScript & Node.js yang memanfaatkan AI API untuk percakapan natural language. Mirip seperti chatbot yang sedang kamu pakai ini! 😄`,
+    keywords: ["chatbot", "bot", "chat bot", "asisten virtual", "percakapan", "AI"],
+    answer: `ChatBot ini adalah contoh aplikasi percakapan berbasis JavaScript & Node.js. Sistemnya menggunakan keyword matching untuk menjawab topik seputar portfolio dan skill.`,
+  },
+  {
+    id: "latest-project",
+    keywords: ["project terbaru", "baru", "terbaru", "recent project", "latest"],
+    answer: `Project terbaru ${profile.nickname} antara lain Mochan Coffee, SIMAK UPZISNU, dan ChatBot. Setiap project menonjolkan keahlian di web app, mobile app, dan backend.`,
   },
   {
     id: "experience",
-    keywords: ["pengalaman", "kerja", "karir", "experience", "freelance", "job"],
+    keywords: ["pengalaman", "kerja", "karir", "experience", "freelance", "job", "bekerja", "client"],
     answer: experiences
       .map((e) => `${e.role} di ${e.company} (${e.period}): ${e.description}`)
       .join(" "),
-    followUp: ["Apa skill-nya?", "Bisa hubungi dimana?"],
+    followUp: ["Skill apa yang dipakai?", "Bisa remote?"],
   },
   {
     id: "education",
-    keywords: ["pendidikan", "sekolah", "kuliah", "kampus", "education", "universitas", "belajar dimana"],
+    keywords: ["pendidikan", "sekolah", "kuliah", "kampus", "education", "universitas", "belajar dimana", "study"],
     answer: education.length
       ? education.map((e) => `${e.degree} - ${e.school} (${e.period})`).join(" ")
-      : `Informasi pendidikan belum tersedia. Sebagai gantinya, ${profile.nickname} banyak belajar secara mandiri (self-taught) sebagai "Vibe Coder".`,
+      : `Informasi pendidikan belum tersedia. Selain itu, ${profile.nickname} juga banyak belajar sendiri lewat project nyata dan sumber online.`,
   },
   {
     id: "services",
-    keywords: ["jasa", "layanan", "service", "tawaran", "offer", "bisa bantu apa"],
+    keywords: ["jasa", "layanan", "service", "tawaran", "offer", "bisa bantu apa", "kerjaan", "service"],
     answer: `Layanan yang ditawarkan: ${services.map((s) => s.title).join(", ")}. ${services.map((s) => s.description).join(" ")}`,
-    followUp: ["Bisa hubungi dimana?"],
+    followUp: ["Apa saja layananmu?", "Bisa kerja remote?"],
+  },
+  {
+    id: "working-style",
+    keywords: ["cara kerja", "workflow", "metode", "proses", "gaya kerja", "bagaimana kerja"],
+    answer: `${profile.nickname} biasanya memulai dengan memahami kebutuhan klien, merancang solusi, membangun dengan clean code, dan rutin melakukan review sampai aplikasi siap.`,
+  },
+  {
+    id: "pricing",
+    keywords: ["harga", "biaya", "pricing", "rate", "tarif", "cost", "rate card", "estimate harga", "budget"],
+    answer: `Biaya project biasanya disesuaikan dengan ruang lingkup, teknologi, dan durasi pengerjaan. Untuk estimasi kasar, ${profile.nickname} akan diskusikan kebutuhan terlebih dahulu sehingga penawaran menjadi lebih akurat dan adil.`,
+    followUp: ["Bagaimana estimasi waktu?", "Bisa kirim penawaran?"],
+  },
+  {
+    id: "timeline",
+    keywords: ["waktu", "timeline", "estimasi", "lama", "durasi", "deadline", "deadline project"],
+    answer: `Estimasi waktu pengerjaan bergantung pada kompleksitas proyek dan fitur yang dibutuhkan. Biasanya mulai dari beberapa minggu untuk website sederhana hingga 1-2 bulan untuk sistem yang lebih lengkap.`,
+    followUp: ["Apa saja yang perlu disiapkan?", "Berapa lama untuk MVP?"],
+  },
+  {
+    id: "testimonials",
+    keywords: ["testimoni", "review", "feedback", "testimony", "rekomendasi", "client review"],
+    answer: `Banyak klien menghargai komunikasi yang jelas dan hasil akhir yang fungsional. ${profile.nickname} fokus memberikan solusi yang bisa dipakai langsung dan mudah dikembangkan lagi di kemudian hari.`,
+    followUp: ["Apa saja project terbaik?", "Bisa kerja remote?"],
   },
   {
     id: "contact",
-    keywords: ["kontak", "hubungi", "contact", "email", "whatsapp", "telepon", "hire", "sewa", "order", "rekrut"],
-    answer: `Kamu bisa hubungi ${profile.nickname} lewat:\n📧 Email: ${profile.email}\n💼 LinkedIn: ${profile.social.linkedin}\n🐙 GitHub: ${profile.social.github}\n\n${profile.availableForWork ? "Saat ini available untuk freelance work! 🚀" : ""}`,
+    keywords: ["kontak", "hubungi", "contact", "email", "whatsapp", "telepon", "hire", "sewa", "order", "rekrut", "DM"],
+    answer: `Kamu bisa menghubungi ${profile.nickname} lewat:\n📧 Email: ${profile.email}\n💼 LinkedIn: ${profile.social.linkedin}\n🐙 GitHub: ${profile.social.github}\n🌐 Website: ${profile.social.website}\n\n${profile.availableForWork ? "Saat ini tersedia untuk project freelance atau kolaborasi." : "Saat ini sedang fokus project lain, tapi tetap terbuka untuk diskusi peluang baru."}`,
+    followUp: ["Ada rate card?", "Bisa kerja remote?"],
   },
   {
     id: "location",
-    keywords: ["lokasi", "domisili", "dimana", "tinggal", "alamat", "kota", "where"],
-    answer: `${profile.nickname} berbasis di ${profile.location}, tapi terbuka untuk kerja remote dari mana saja.`,
+    keywords: ["lokasi", "domisili", "dimana", "tinggal", "alamat", "kota", "where", "based"],
+    answer: `${profile.nickname} berbasis di ${profile.location}, namun siap bekerja secara remote untuk project dari mana saja.`,
   },
   {
     id: "availability",
-    keywords: ["available", "tersedia", "kosong", "free", "lowongan", "open to work", "lagi sibuk"],
+    keywords: ["available", "tersedia", "kosong", "free", "lowongan", "open to work", "lagi sibuk", "bisa kerja"],
     answer: profile.availableForWork
-      ? `Ya! ${profile.nickname} saat ini available untuk freelance project maupun kolaborasi. Yuk hubungi lewat email atau LinkedIn.`
-      : `Saat ini ${profile.nickname} sedang penuh dengan komitmen lain, tapi tetap terbuka untuk diskusi project menarik.`,
-    followUp: ["Bisa hubungi dimana?"],
+      ? `Ya! ${profile.nickname} saat ini available untuk freelance project, kontrak jangka pendek, atau kolaborasi. Silakan hubungi lewat email atau LinkedIn.`
+      : `Saat ini ${profile.nickname} sedang cukup sibuk, tapi tetap terbuka untuk diskusi apabila ada project menarik.`,
+    followUp: ["Bisa hubungi dimana?", "Ada contoh project?"],
+  },
+  {
+    id: "hiring",
+    keywords: ["hire", "rekrut", "mencari developer", "cari programmer", "butuh developer", "need developer"],
+    answer: `Kalau kamu mencari developer yang bisa membuat website, aplikasi mobile, atau backend, ${profile.nickname} bisa membantu. Kontak untuk diskusi scope, timeline, dan budget.`,
+  },
+  {
+    id: "portfolio",
+    keywords: ["portfolio", "portofolio", "website", "showcase", "contoh kerja", "hasil kerja"],
+    answer: `Portofolio lengkap tersedia di ${profile.social.website} dan GitHub ${profile.social.github}. Di sana kamu bisa melihat project web, mobile, dan tools yang pernah dibuat.`,
   },
   {
     id: "thanks",
-    keywords: ["terima kasih", "thanks", "thank you", "makasih", "thx"],
-    answer: `Sama-sama! 😊 Kalau ada pertanyaan lain seputar ${profile.nickname}, tinggal tanya aja.`,
+    keywords: ["terima kasih", "thanks", "thank you", "makasih", "thx", "trimakasih"],
+    answer: `Sama-sama! 😊 Kalau masih ada yang ingin kamu tanyakan, tinggal tulis saja.`,
   },
   {
     id: "bye",
-    keywords: ["bye", "selamat tinggal", "sampai jumpa", "dadah", "good bye", "see you"],
-    answer: `Sampai jumpa! 👋 Jangan ragu kembali kalau ada pertanyaan lain.`,
+    keywords: ["bye", "selamat tinggal", "sampai jumpa", "dadah", "good bye", "see you", "sampai nanti"],
+    answer: `Sampai jumpa! 👋 Kapan pun kamu butuh informasi lagi tentang ${profile.nickname}, saya siap membantu.`,
   },
   {
     id: "joke",
-    keywords: ["lucu", "joke", "lawak", "ngelawak", "gombal"],
-    answer: `Saya cuma chatbot rule-based, jadi humor saya terbatas keyword 😅 Tapi ${profile.nickname} kalau soal coding jauh lebih jago daripada saya soal lawak!`,
+    keywords: ["lucu", "joke", "lawak", "ngelawak", "gombal", "humor"],
+    answer: `Saya chatbot yang fokus bantu jawab soal portfolio dan skill. Untuk lelucon, minta saja ke ${profile.nickname}! 😄`,
   },
 ];
 
-export const defaultAnswer = `Maaf, saya belum paham maksud pertanyaan itu 🤔 Coba tanya soal skill, project, pengalaman kerja, pendidikan, atau cara menghubungi ${profile.nickname}. Atau pilih salah satu topik di bawah:`;
+export const defaultAnswer = `Maaf, saya belum paham maksud pertanyaan itu 🤔 Kamu bisa tanya tentang profil, skill, project, pengalaman, pendidikan, layanan, atau cara menghubungi ${profile.nickname}.`;
 
 export const suggestedQuestions = [
   "Siapa kamu?",
   "Apa skill-nya?",
-  "Lihat project",
+  "Project terbaru?",
   "Bisa hubungi dimana?",
+  "Bagaimana cara kerja?",
+  "Berapa estimasi waktunya?",
+  "Berapa biayanya?",
 ];
 
 /**
