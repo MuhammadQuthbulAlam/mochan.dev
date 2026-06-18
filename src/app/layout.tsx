@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/lib/theme";
-import { LanguageProvider } from "@/lib/language";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import ChatWidget from "@/components/chatbot/ChatWidget";
 import "@/styles/globals.css";
 import { profile } from "@/lib/data";
 
@@ -30,19 +30,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id" className="dark" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className="noise min-h-screen antialiased">
-        <LanguageProvider>
-          <ThemeProvider>
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
-          </ThemeProvider>
-        </LanguageProvider>
+        <ThemeProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+          <ChatWidget />
+        </ThemeProvider>
       </body>
     </html>
   );
