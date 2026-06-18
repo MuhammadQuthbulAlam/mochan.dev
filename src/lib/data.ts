@@ -55,7 +55,7 @@ export const experiences = [
   {
     role: "Freelance Full Stack Developer",
     company: "wiraswasta",
-    period: "2022 – Sekarang",
+    period: "2023 – Sekarang",
     description:
       "Developing custom web applications and mobile apps for clients. Specializing in React, Node.js, and Flutter solutions.",
     tags: ["React", "TypeScript", "Next.js", "Node.js", "Flutter", "PostgreSQL"],
@@ -63,7 +63,7 @@ export const experiences = [
   {
     role: "IT Support & Inventory",
     company: "Various Clients",
-    period: "2021 – Sekarang",
+    period: "2025 – Sekarang",
     description:
       "Providing IT support, maintaining hardware and software infrastructure, managing IT asset inventory.",
     tags: ["IT Support", "Networking", "Hardware", "Inventory"],
