@@ -32,7 +32,7 @@ export const knowledgeBase: KnowledgeEntry[] = [
     id: "skills",
     keywords: ["skill", "kemampuan", "bisa apa", "keahlian", "menguasai", "tech stack", "teknologi", "bahasa programming", "stack"],
     answer: `${profile.nickname} menguasai: ${[...skills.languages, ...skills.frameworks].slice(0, 8).map((s) => s.name).join(", ")}. Database: ${skills.databases.map((d) => d.name).join(" & ")}. Tools: ${skills.tools.map((t) => t.name).join(", ")}.`,
-    followUp: ["Apa project terbarunya?", "Berapa lama coding?"],
+    followUp: ["Apa project terbarunya?", "Berapa lama belajar coding?"],
   },
   {
     id: "projects",
