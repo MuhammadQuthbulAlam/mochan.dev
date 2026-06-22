@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/lib/theme";
+import { LanguageProvider } from "@/lib/language";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ChatWidget from "@/components/chatbot/ChatWidget";
@@ -37,10 +38,12 @@ export default function RootLayout({
       </head>
       <body className="noise min-h-screen antialiased">
         <ThemeProvider>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-          <ChatWidget />
+          <LanguageProvider>
+            <Navbar />
+            <main>{children}</main>
+            <Footer />
+            <ChatWidget />
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

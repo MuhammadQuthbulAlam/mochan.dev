@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { MessageCircle, X, Send, Sparkles } from "lucide-react";
+import { MessageCircle, X, Send, Sparkles, ArrowUp } from "lucide-react";
 import { ChatMessage } from "@/types/chat";
 import { profile } from "@/lib/data";
 import { suggestedQuestions } from "@/lib/chatbot-knowledge";
@@ -28,6 +28,7 @@ export default function ChatWidget() {
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const [hasUnread, setHasUnread] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -43,6 +44,12 @@ export default function ChatWidget() {
       setHasUnread(false);
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    const onScroll = () => setShowScrollTop(window.scrollY > 360);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   async function sendMessage(text: string) {
     const trimmed = text.trim();
@@ -98,25 +105,41 @@ export default function ChatWidget() {
 
   return (
     <>
-      {/* Floating toggle button */}
-      <button
-        onClick={() => setIsOpen((prev) => !prev)}
-        aria-label={isOpen ? "Tutup chat" : "Buka chat"}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-110"
-        style={{
-          background: "var(--accent)",
-          color: "#fff",
-          boxShadow: "0 4px 24px rgba(255, 107, 26, 0.4)",
-        }}
-      >
-        {isOpen ? <X size={22} /> : <MessageCircle size={22} />}
-        {hasUnread && !isOpen && (
-          <span
-            className="absolute top-0 right-0 w-3.5 h-3.5 rounded-full border-2"
-            style={{ background: "#22c55e", borderColor: "var(--bg)" }}
-          />
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-3">
+        {showScrollTop && (
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            aria-label="Scroll to top"
+            className="w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-110"
+            style={{
+              background: "var(--bg-card)",
+              color: "var(--text-primary)",
+              border: "1px solid var(--border)",
+            }}
+          >
+            <ArrowUp size={18} />
+          </button>
         )}
-      </button>
+
+        <button
+          onClick={() => setIsOpen((prev) => !prev)}
+          aria-label={isOpen ? "Tutup chat" : "Buka chat"}
+          className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-110"
+          style={{
+            background: "var(--accent)",
+            color: "#fff",
+            boxShadow: "0 4px 24px rgba(255, 107, 26, 0.4)",
+          }}
+        >
+          {isOpen ? <X size={22} /> : <MessageCircle size={22} />}
+          {hasUnread && !isOpen && (
+            <span
+              className="absolute top-0 right-0 w-3.5 h-3.5 rounded-full border-2"
+              style={{ background: "#22c55e", borderColor: "var(--bg)" }}
+            />
+          )}
+        </button>
+      </div>
 
       {/* Chat panel */}
       <div
